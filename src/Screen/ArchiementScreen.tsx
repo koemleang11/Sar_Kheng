@@ -17,6 +17,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Swiper from 'react-native-swiper';
 import data from '../temp/DataHome';
 import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
+import {navigate, reset} from '../navigation/MainStack';
 
 const {width} = Dimensions.get('screen');
 
@@ -85,7 +86,7 @@ const ArchiementScreen = ({navigation}: any) => {
           <View>
             <TouchableOpacity
               activeOpacity={0.8}
-              onPress={() => navigation.replace('DetailScreen', data)}>
+              onPress={() => navigate('DetailScreen', data)}>
               <View style={{flexDirection: 'row'}}>
                 <Text
                   style={{
@@ -128,7 +129,7 @@ const ArchiementScreen = ({navigation}: any) => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => navigation.navigate('MainDrawer')}>
+          onPress={() => reset('MainDrawer')}>
           <View
             style={{
               width: 32,

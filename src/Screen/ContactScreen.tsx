@@ -13,6 +13,7 @@ import colors from '../theme/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ContactList from '../temp/ContactList';
 import {Linking} from 'react-native';
+import {reset} from '../navigation/MainStack';
 
 const ContactScreen = ({navigation}: any) => {
   const Card = ({data}: any) => {
@@ -60,7 +61,7 @@ const ContactScreen = ({navigation}: any) => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => navigation.navigate('MainDrawer')}>
+          onPress={() => reset('MainDrawer')}>
           <View
             style={{
               width: 32,

@@ -15,7 +15,7 @@ import React from 'react';
 import colors from '../theme/colors';
 import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {navigate} from '../navigation/MainStack';
+import {goBack, navigate} from '../navigation/MainStack';
 import CustomAutoWebView from '../component/CustomeAutoHight/CustomAutoWebView';
 const {width} = Dimensions.get('screen');
 
@@ -37,9 +37,7 @@ const DetailScreen = ({navigation, route}: any) => {
           paddingHorizontal: 10,
           elevation: 8,
         }}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigation.navigate('MainDrawer')}>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => goBack()}>
           <View
             style={{
               width: 32,

@@ -17,10 +17,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Swiper from 'react-native-swiper';
 import data from '../temp/DataHome';
 import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
+import {goBack, navigate, reset} from '../navigation/MainStack';
 
 const {width} = Dimensions.get('screen');
 
-const DailyAction = ({navigation}: any) => {
+const DailyAction = () => {
   const Card = ({data}: any) => {
     return (
       <View style={{height: 231, justifyContent: 'flex-end', marginBottom: 20}}>
@@ -61,6 +62,7 @@ const DailyAction = ({navigation}: any) => {
             borderBottomRightRadius: 10,
             flexDirection: 'row',
             paddingTop: 10,
+            elevation: 12,
           }}>
           <View
             style={{
@@ -81,7 +83,7 @@ const DailyAction = ({navigation}: any) => {
           <View>
             <TouchableOpacity
               activeOpacity={0.8}
-              onPress={() => navigation.replace('DetailScreen', data)}>
+              onPress={() => navigate('DetailScreen', data)}>
               <View style={{flexDirection: 'row'}}>
                 <Text
                   style={{
@@ -115,7 +117,7 @@ const DailyAction = ({navigation}: any) => {
       <View
         style={{
           flexDirection: 'row',
-          //   justifyContent: 'space-between',
+          justifyContent: 'flex-start',
           backgroundColor: colors.BrownPrimary,
           height: 48,
           alignItems: 'center',
@@ -125,7 +127,7 @@ const DailyAction = ({navigation}: any) => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => navigation.goBack('HomeScreen')}>
+          onPress={() => reset('MainDrawer')}>
           <View
             style={{
               width: 32,
@@ -149,7 +151,7 @@ const DailyAction = ({navigation}: any) => {
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 10,
-            paddingLeft: 5,
+            // paddingLeft: 5,
           }}>
           <Text
             style={{

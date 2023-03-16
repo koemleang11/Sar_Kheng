@@ -9,20 +9,17 @@ import {
   Linking,
 } from 'react-native';
 import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {useNavigation} from '@react-navigation/native';
 import colors from '../theme/colors';
 import {ScrollView} from 'react-native-gesture-handler';
 import {navigate} from '../navigation/MainStack';
 
 const DrawerScreen = () => {
-  const navigation: any = useNavigation();
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () =>
     setIsEnabled((previousState: any) => !previousState);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <View>
       <View style={{height: 300}}>
         <Image
           source={require('../assets/SplashImage/BgImage.png')}
@@ -63,7 +60,7 @@ const DrawerScreen = () => {
         <View style={{marginHorizontal: 20, marginVertical: 10}}>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('DailyAction')}>
+            onPress={() => navigate('DailyAction')}>
             <View style={styles.TextContainer}>
               <Image
                 source={require('../assets/icons/Cooperate.png')}
@@ -76,7 +73,7 @@ const DrawerScreen = () => {
         <View style={{marginHorizontal: 20, marginBottom: 10}}>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('VideoScreen')}>
+            onPress={() => navigate('VideoScreen')}>
             <View style={styles.TextContainer}>
               <Image
                 source={require('../assets/icons/Video.png')}
@@ -89,7 +86,7 @@ const DrawerScreen = () => {
         <View style={{marginHorizontal: 20, marginBottom: 10}}>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('SpeechScreen')}>
+            onPress={() => navigate('SpeechScreen')}>
             <View style={styles.TextContainer}>
               <Image
                 source={require('../assets/icons/quotes.png')}
@@ -102,7 +99,7 @@ const DrawerScreen = () => {
         <View style={{marginHorizontal: 20}}>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('HistoryScreen')}>
+            onPress={() => navigate('HistoryScreen')}>
             <View style={styles.TextContainer}>
               <Image
                 source={require('../assets/icons/history.png')}
@@ -115,7 +112,7 @@ const DrawerScreen = () => {
         <View style={{marginHorizontal: 20, marginTop: 10}}>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('ArchiementScreen')}>
+            onPress={() => navigate('ArchiementScreen')}>
             <View style={styles.TextContainer}>
               <Image
                 source={require('../assets/icons/Achievement.png')}
@@ -128,7 +125,7 @@ const DrawerScreen = () => {
         <View style={{marginHorizontal: 20, marginTop: 10}}>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('ContactScreen')}>
+            onPress={() => navigate('ContactScreen')}>
             <View style={styles.TextContainer}>
               <Image
                 source={require('../assets/icons/Contact.png')}
@@ -186,7 +183,7 @@ const DrawerScreen = () => {
           />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

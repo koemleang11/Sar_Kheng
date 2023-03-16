@@ -11,6 +11,7 @@ import {
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import colors from '../theme/colors';
+import {reset} from '../navigation/MainStack';
 
 const SpeechScreen = ({navigation}: any) => {
   return (
@@ -30,7 +31,7 @@ const SpeechScreen = ({navigation}: any) => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => navigation.navigate('MainDrawer')}>
+          onPress={() => reset('MainDrawer')}>
           <View
             style={{
               width: 32,

@@ -17,6 +17,7 @@ import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import CustomAutoWebView from '../component/CustomeAutoHight/CustomAutoWebView';
+import {goBack} from '../navigation/MainStack';
 const {width} = Dimensions.get('screen');
 
 const VideoDetailScreen = ({navigation, route}: any) => {
@@ -37,9 +38,7 @@ const VideoDetailScreen = ({navigation, route}: any) => {
           paddingHorizontal: 10,
           elevation: 12,
         }}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigation.navigate('VideoScreen')}>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => goBack()}>
           <View
             style={{
               width: 32,

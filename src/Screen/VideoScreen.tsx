@@ -5,16 +5,14 @@ import colors from '../theme/colors';
 import data from '../temp/VideoData';
 import {SafeAreaView} from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {navigate} from '../navigation/MainStack';
-import {useNavigation} from '@react-navigation/native';
+import {navigate, reset} from '../navigation/MainStack';
 
 const VideoScreen = () => {
-  const navigation = useNavigation();
   const VideoCard = ({data}: any) => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => navigation.navigate('VideoDetailScreen', data)}>
+        onPress={() => navigate('VideoDetailScreen', data)}>
         <View>
           <YoutubePlayer height={200} videoId={data.link} />
           <View
@@ -60,7 +58,7 @@ const VideoScreen = () => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => navigation.navigate('MainDrawer')}>
+          onPress={() => reset('MainDrawer')}>
           <View
             style={{
               width: 32,

@@ -11,7 +11,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import colors from '../theme/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {navigate} from '../navigation/MainStack';
+import {navigate, reset} from '../navigation/MainStack';
 import {useNavigation} from '@react-navigation/native';
 
 const HistoryScreen = () => {
@@ -30,7 +30,7 @@ const HistoryScreen = () => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => navigation.navigate('MainDrawer')}>
+          onPress={() => reset('MainDrawer')}>
           <View
             style={{
               width: 32,

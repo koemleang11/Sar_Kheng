@@ -31,7 +31,7 @@ const HomeScreen = () => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => navigation.navigate('DetailScreen', data)}>
+        onPress={() => navigate('DetailScreen', data)}>
         <View
           style={{height: 231, justifyContent: 'flex-end', marginBottom: 20}}>
           <Swiper>
@@ -183,8 +183,8 @@ const HomeScreen = () => {
               duration={20000}
               loop
               bounce={false}
-              repeatSpacer={20}
-              marqueeDelay={2000}>
+              repeatSpacer={10}
+              marqueeDelay={1000}>
               ពាក្យស្លោកជាតិ ៣កុំ ១រាយការណ៍៖ កុំពាក់ព័ន្ធ៖ កុំអន្តរាគមន៍៖
               កុំលើកលែង៖ មួយរាយការណ៍៖
             </TextTicker>

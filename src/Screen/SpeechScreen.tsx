@@ -16,7 +16,7 @@ import {reset} from '../navigation/MainStack';
 const SpeechScreen = ({navigation}: any) => {
   return (
     <View>
-      <StatusBar translucent />
+      <StatusBar translucent backgroundColor={colors.BrownPrimary} />
 
       {/* Header Start */}
 
@@ -55,7 +55,7 @@ const SpeechScreen = ({navigation}: any) => {
           }}>
           <Text
             style={{
-              paddingLeft: 30,
+              paddingLeft: 20,
               fontSize: 18,
               color: colors.white,
               fontFamily: 'Moul-Regular',
@@ -85,7 +85,7 @@ const SpeechScreen = ({navigation}: any) => {
           backgroundColor: colors.BrownPrimary,
           marginTop: -30,
           marginBottom: 10,
-          borderBottomRightRadius: 20,
+          borderTopRightRadius: 20,
           borderTopLeftRadius: 20,
         }}>
         <Text

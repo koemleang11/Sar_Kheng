@@ -68,6 +68,7 @@ const ArchiementScreen = ({navigation}: any) => {
             borderBottomRightRadius: 10,
             flexDirection: 'row',
             paddingTop: 10,
+            elevation: 12,
           }}>
           <View
             style={{
@@ -80,8 +81,15 @@ const ArchiementScreen = ({navigation}: any) => {
               flexDirection: 'row',
               borderRadius: 10,
             }}>
-            <Icon name="calendar" />
-            <Text style={{paddingLeft: 10}}>{data.date}</Text>
+            <Icon name="calendar" style={{color: colors.white}} />
+            <Text
+              style={{
+                paddingLeft: 10,
+                fontFamily: 'Battambang-Bold',
+                color: colors.white,
+              }}>
+              {data.date}
+            </Text>
           </View>
           <View>
             <TouchableOpacity

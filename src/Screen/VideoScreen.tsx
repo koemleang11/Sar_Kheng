@@ -55,6 +55,7 @@ const VideoScreen = () => {
           alignItems: 'center',
           paddingHorizontal: 20,
           elevation: 12,
+          justifyContent: 'flex-start',
         }}>
         <TouchableOpacity
           activeOpacity={0.8}

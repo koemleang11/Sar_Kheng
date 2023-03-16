@@ -56,6 +56,17 @@ const DetailScreen = ({navigation, route}: any) => {
             />
           </View>
         </TouchableOpacity>
+        <View>
+          <Text
+            style={{
+              fontSize: 20,
+              color: colors.white,
+              fontFamily: 'Moul-Regular',
+              textAlign: 'center',
+            }}>
+            ពត៌មានលម្អិត
+          </Text>
+        </View>
         <View style={{flexDirection: 'row'}}>
           <View
             style={{
@@ -69,7 +80,11 @@ const DetailScreen = ({navigation, route}: any) => {
               marginRight: 10,
             }}>
             <Text
-              style={{fontSize: 16, color: colors.white, fontWeight: 'bold'}}>
+              style={{
+                fontSize: 16,
+                color: colors.white,
+                fontFamily: 'Moul-Regular',
+              }}>
               អ
             </Text>
           </View>
@@ -85,7 +100,11 @@ const DetailScreen = ({navigation, route}: any) => {
               marginRight: 10,
             }}>
             <Text
-              style={{fontSize: 20, color: colors.white, fontWeight: 'bold'}}>
+              style={{
+                fontSize: 20,
+                color: colors.white,
+                fontFamily: 'Moul-Regular',
+              }}>
               អ
             </Text>
           </View>
@@ -145,7 +164,7 @@ const DetailScreen = ({navigation, route}: any) => {
           }}>
           <View style={{flexDirection: 'row'}}>
             <Icon name="calendar" style={{paddingTop: 4, paddingRight: 5}} />
-            <Text>March 04, 2023</Text>
+            <Text>{data.date}</Text>
           </View>
         </View>
         <CustomAutoWebView />

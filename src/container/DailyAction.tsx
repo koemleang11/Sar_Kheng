@@ -24,74 +24,80 @@ const {width} = Dimensions.get('screen');
 const DailyAction = () => {
   const Card = ({data}: any) => {
     return (
-      <View style={{height: 231, justifyContent: 'flex-end', marginBottom: 20}}>
-        <Swiper>
-          <View>
-            <ImageBackground
-              source={data.images[0]}
-              style={styles.ImageBg}></ImageBackground>
-          </View>
-          <View>
-            <ImageBackground
-              source={data.images[1]}
-              style={{
-                height: 192,
-                marginHorizontal: 20,
-                justifyContent: 'flex-end',
-                borderRadius: 10,
-              }}></ImageBackground>
-          </View>
-          <View>
-            <ImageBackground
-              source={data.images[2]}
-              style={styles.ImageBg}></ImageBackground>
-          </View>
-        </Swiper>
-        <View style={styles.TitleContainer}>
-          <Text style={{color: colors.white, fontWeight: 'bold'}}>
-            {data.title}
-          </Text>
-        </View>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => navigate('DetailScreen', data)}>
         <View
-          style={{
-            height: 50,
-            justifyContent: 'space-between',
-            marginHorizontal: 20,
-            backgroundColor: colors.Gray,
-            borderBottomLeftRadius: 10,
-            borderBottomRightRadius: 10,
-            flexDirection: 'row',
-            paddingTop: 10,
-            elevation: 12,
-          }}>
-          <View
-            style={{
-              marginHorizontal: 10,
-              backgroundColor: colors.BrownPrimary,
-              height: 28,
-              width: 150,
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'row',
-              borderRadius: 10,
-            }}>
-            <Icon name="calendar" style={{color: colors.white}} />
-            <Text style={{paddingLeft: 10, color: colors.white}}>
-              {data.date}
+          style={{height: 231, justifyContent: 'flex-end', marginBottom: 20}}>
+          <Swiper>
+            <View>
+              <ImageBackground
+                source={data.images[0]}
+                style={styles.ImageBg}></ImageBackground>
+            </View>
+            <View>
+              <ImageBackground
+                source={data.images[1]}
+                style={{
+                  height: 192,
+                  marginHorizontal: 20,
+                  justifyContent: 'flex-end',
+                  borderRadius: 10,
+                }}></ImageBackground>
+            </View>
+            <View>
+              <ImageBackground
+                source={data.images[2]}
+                style={styles.ImageBg}></ImageBackground>
+            </View>
+          </Swiper>
+          <View style={styles.TitleContainer}>
+            <Text style={{color: colors.white, fontFamily: 'Battambang-Bold'}}>
+              {data.title}
             </Text>
           </View>
-          <View>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => navigate('DetailScreen', data)}>
+          <View
+            style={{
+              height: 50,
+              justifyContent: 'space-between',
+              marginHorizontal: 20,
+              backgroundColor: colors.Gray,
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+              flexDirection: 'row',
+              paddingTop: 10,
+              elevation: 12,
+            }}>
+            <View
+              style={{
+                marginHorizontal: 10,
+                backgroundColor: colors.BrownPrimary,
+                height: 28,
+                width: 150,
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'row',
+                borderRadius: 10,
+              }}>
+              <Icon name="calendar" style={{color: colors.white}} />
+              <Text
+                style={{
+                  paddingLeft: 10,
+                  color: colors.white,
+                  fontFamily: 'Battambang-Regular',
+                  textAlign: 'center',
+                }}>
+                {data.date}
+              </Text>
+            </View>
+            <View>
               <View style={{flexDirection: 'row'}}>
                 <Text
                   style={{
                     paddingLeft: 10,
-                    fontSize: 14,
+                    fontSize: 16,
                     color: colors.BrownPrimary,
-                    fontFamily: 'KhmerOS_battambang',
-                    fontWeight: 'bold',
+                    fontFamily: 'Battambang-Bold',
                   }}>
                   អានលម្អិត
                 </Text>
@@ -105,14 +111,14 @@ const DailyAction = () => {
                   }}
                 />
               </View>
-            </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <View>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
       <View
         style={{
@@ -151,22 +157,21 @@ const DailyAction = () => {
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 10,
-            // paddingLeft: 5,
           }}>
           <Text
             style={{
               paddingLeft: 30,
-              fontSize: 22,
+              fontSize: 20,
               color: colors.white,
-              fontWeight: 'bold',
-              fontFamily: 'KhmerOS_muol',
+              fontFamily: 'Moul-Regular',
+              textAlign: 'center',
             }}>
             សម្តេចក្រឡាហោម ស ខេង
           </Text>
         </View>
       </View>
       <FlatList data={data} renderItem={({item}) => <Card data={item} />} />
-    </SafeAreaView>
+    </View>
   );
 };
 

@@ -17,16 +17,13 @@ import colors from '../theme/colors';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import data from '../temp/DataHome';
 import Swiper from 'react-native-swiper';
-import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
 import TextTicker from 'react-native-text-ticker';
 import {openDrawer} from '../navigation/MainDrawer';
 import YoutubePlayer from 'react-native-youtube-iframe';
-import navigate from '../navigation/MainStack';
+import {navigate} from '../navigation/MainStack';
 const {width} = Dimensions.get('screen');
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
   const Card = ({data}: any) => {
     return (
       <TouchableOpacity
@@ -158,8 +155,8 @@ const HomeScreen = () => {
           }>
           <View>
             <Image
-              source={require('../assets/icons/Youtube.png')}
-              style={{height: 28, width: 28, tintColor: colors.Red}}
+              source={require('../assets/icons/Yotube3.png')}
+              style={{height: 35, width: 35}}
             />
           </View>
         </TouchableOpacity>

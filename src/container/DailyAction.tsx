@@ -22,6 +22,8 @@ import {goBack, navigate, reset} from '../navigation/MainStack';
 const {width} = Dimensions.get('screen');
 
 const DailyAction = () => {
+
+  // Detail Container start
   const Card = ({data}: any) => {
     return (
       <TouchableOpacity
@@ -117,8 +119,11 @@ const DailyAction = () => {
       </TouchableOpacity>
     );
   };
+
+   // Detail Container end
+
   return (
-    <View>
+    <View style={{flex:1,marginBottom:20}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
       <View
         style={{
@@ -160,7 +165,7 @@ const DailyAction = () => {
           }}>
           <Text
             style={{
-              paddingLeft: 30,
+              paddingLeft: 20,
               fontSize: 20,
               color: colors.white,
               fontFamily: 'Moul-Regular',

@@ -3,7 +3,7 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomeScreen from '../container/HomeScreen';
 import DrawerScreen from '../Screen/DrawerScreen';
-import {navigationRef} from './MainStack';
+import MainStack, {navigationRef} from './MainStack';
 import {DrawerActions} from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
@@ -32,8 +32,8 @@ const MainDrawer = () => {
         headerShown: false,
         drawerStyle: {width: '80%'},
       }}
-      drawerContent={() => <DrawerScreen />}>
-      <Drawer.Screen name="Homescreen" component={HomeScreen} />
+      drawerContent={(props:any) => <DrawerScreen {...props} />}>
+      <Drawer.Screen name="MainStack" component={MainStack} />
     </Drawer.Navigator>
   );
 };

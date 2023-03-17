@@ -5,7 +5,7 @@ import colors from '../theme/colors';
 import data from '../temp/VideoData';
 import {SafeAreaView} from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {navigate, reset} from '../navigation/MainStack';
+import {goBack, navigate, reset} from '../navigation/MainStack';
 
 const VideoScreen = () => {
   const VideoCard = ({data}: any) => {
@@ -63,7 +63,7 @@ const VideoScreen = () => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => reset('MainDrawer')}>
+          onPress={goBack}>
           <View
             style={{
               width: 32,
@@ -87,7 +87,7 @@ const VideoScreen = () => {
           }}>
           <Text
             style={{
-              fontSize: 20,
+              fontSize: 18,
               color: colors.white,
               fontFamily: 'Moul-Regular',
               paddingLeft: 20,

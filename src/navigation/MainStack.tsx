@@ -66,8 +66,6 @@ const MainStack = () => {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen component={MainDrawer} name="MainDrawer" />
-      <Stack.Screen component={DrawerScreen} name="DrawerScreen" />
       <Stack.Screen component={HomeScreen} name="HomeScreen" />
       <Stack.Screen component={DetailScreen} name="DetailScreen" />
       <Stack.Screen component={NotificationScreen} name="NotificationScreen" />

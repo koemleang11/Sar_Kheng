@@ -17,9 +17,24 @@ import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {goBack, navigate} from '../navigation/MainStack';
 import CustomAutoWebView from '../component/CustomeAutoHight/CustomAutoWebView';
+import Share from 'react-native-share'
 const {width} = Dimensions.get('screen');
 
+
 const DetailScreen = ({navigation, route}: any) => {
+  const ShareButton = () => {
+    const options = {
+      message: 'https://www.youtube.com/watch?v=TGTNBxbFHRY'
+    }
+
+    Share.open(options)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    err && console.log(err);
+  });
+  }
   const data = route.params;
   return (
     <View>
@@ -64,7 +79,7 @@ const DetailScreen = ({navigation, route}: any) => {
               fontFamily: 'Moul-Regular',
               textAlign: 'center',
             }}>
-            ពត៌មានលម្អិត
+            ព័ត៌មានលម្អិត
           </Text>
         </View>
         <View style={{flexDirection: 'row'}}>
@@ -118,7 +133,7 @@ const DetailScreen = ({navigation, route}: any) => {
               alignItems: 'center',
               borderRadius: 10,
             }}>
-            <MaterailIcon name="ios-share" size={20} color={colors.white} />
+            <MaterailIcon name="ios-share" size={20} color={colors.white} onPress={ShareButton} />
           </View>
         </View>
       </View>

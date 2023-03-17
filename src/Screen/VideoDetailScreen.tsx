@@ -57,6 +57,17 @@ const VideoDetailScreen = ({navigation, route}: any) => {
             />
           </View>
         </TouchableOpacity>
+        <View>
+          <Text
+            style={{
+              fontSize: 18,
+              color: colors.white,
+              fontFamily: 'Moul-Regular',
+              textAlign: 'center',
+            }}>
+            ព័ត៌មានលម្អិត
+          </Text>
+        </View>
         <View style={{flexDirection: 'row'}}>
           <View
             style={{

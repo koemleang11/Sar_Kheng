@@ -50,7 +50,7 @@ const VideoScreen = () => {
     );
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <View
         style={{
           flexDirection: 'row',
@@ -61,9 +61,7 @@ const VideoScreen = () => {
           elevation: 12,
           justifyContent: 'flex-start',
         }}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={goBack}>
+        <TouchableOpacity activeOpacity={0.8} onPress={goBack}>
           <View
             style={{
               width: 32,

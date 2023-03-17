@@ -60,7 +60,7 @@ const ContactScreen = ({navigation}: any) => {
           elevation: 12,
         }}>
         <TouchableOpacity
-          activeOpacity={0.8}
+          activeOpacity={0.9}
           onPress={() => reset('MainDrawer')}>
           <View
             style={{

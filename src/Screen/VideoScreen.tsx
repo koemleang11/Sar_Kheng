@@ -14,7 +14,11 @@ const VideoScreen = () => {
         activeOpacity={0.8}
         onPress={() => navigate('VideoDetailScreen', data)}>
         <View>
-          <YoutubePlayer height={200} videoId={data.link} />
+          <YoutubePlayer
+            webViewStyle={{opacity: 0.99}}
+            height={200}
+            videoId={data.link}
+          />
           <View
             style={{
               height: 90,

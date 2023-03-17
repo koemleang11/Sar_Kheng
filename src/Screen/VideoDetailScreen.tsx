@@ -106,7 +106,11 @@ const VideoDetailScreen = ({navigation, route}: any) => {
       </View>
 
       {/* Header end */}
-      <YoutubePlayer height={200} videoId={data.link} />
+      <YoutubePlayer
+        webViewStyle={{opacity: 0.99}}
+        height={200}
+        videoId={data.link}
+      />
       <View style={styles.imageDetails}>
         <Text
           style={{

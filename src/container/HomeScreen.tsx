@@ -162,7 +162,11 @@ const HomeScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={{height: 260}}>
-        <YoutubePlayer height={200} videoId={'LtvXKx8aYO0'} />
+        <YoutubePlayer
+          webViewStyle={{opacity: 0.99}}
+          height={200}
+          videoId={'LtvXKx8aYO0'}
+        />
         <View
           style={{
             backgroundColor: colors.BrownPrimary,

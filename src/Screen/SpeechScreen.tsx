@@ -11,7 +11,7 @@ import {
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import colors from '../theme/colors';
-import {reset} from '../navigation/MainStack';
+import {navigate, reset} from '../navigation/MainStack';
 
 const SpeechScreen = ({navigation}: any) => {
   return (
@@ -31,7 +31,7 @@ const SpeechScreen = ({navigation}: any) => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => reset('MainDrawer')}>
+          onPress={() => navigate('HomeScreen')}>
           <View
             style={{
               width: 32,
@@ -97,9 +97,9 @@ const SpeechScreen = ({navigation}: any) => {
           ពាក្យស្លោកជាតិ ៣កុំ ១រាយការណ៍
         </Text>
       </View>
-    
+
       <ScrollView>
-      <View>
+        <View>
           <Text style={styles.TitleSection}>កុំពាក់ព័ន្ធ ៖</Text>
           <Text style={styles.detail}>
             កុំជួញដូរ កុំចែកចាយ កុំធ្វើខ្នងបង្អែក កុំឃុបឃិត និងកុំប្រើ
@@ -130,10 +130,9 @@ const SpeechScreen = ({navigation}: any) => {
           </Text>
         </View>
       </ScrollView>
-        
-  
+
       {/* Speech Detail start */}
-      </SafeAreaView>
+    </SafeAreaView>
   );
 };
 

@@ -48,7 +48,7 @@ const DrawerScreen = () => {
         </View>
         <View>
           <Switch
-            trackColor={{false: '#767577', true: '#E87E04'}}
+            trackColor={{false: '#767577', true: '#914D00'}}
             thumbColor={isEnabled ? '#f4f3f4' : '#f4f3f4'}
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleSwitch}

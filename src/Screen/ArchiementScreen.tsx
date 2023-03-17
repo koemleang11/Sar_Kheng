@@ -137,7 +137,7 @@ const ArchiementScreen = ({navigation}: any) => {
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => reset('MainDrawer')}>
+          onPress={() => navigate('HomeScreen')}>
           <View
             style={{
               width: 32,

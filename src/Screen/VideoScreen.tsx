@@ -83,7 +83,7 @@ const VideoScreen = () => {
           }}>
           <Text
             style={{
-              fontSize: 20,
+              fontSize: 18,
               color: colors.white,
               fontFamily: 'Moul-Regular',
               paddingLeft: 20,

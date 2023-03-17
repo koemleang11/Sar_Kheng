@@ -19,6 +19,7 @@ import ContactScreen from '../Screen/ContactScreen';
 import ArchiementScreen from '../Screen/ArchiementScreen';
 import VideoScreen from '../Screen/VideoScreen';
 import VideoDetailScreen from '../Screen/VideoDetailScreen';
+import ShareButton from '../component/ShareButton';
 export const navigationRef: any = createNavigationContainerRef();
 
 export function navigate(name: string, params: any = {}) {

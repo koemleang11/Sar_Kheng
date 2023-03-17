@@ -15,7 +15,7 @@ import {reset} from '../navigation/MainStack';
 
 const SpeechScreen = ({navigation}: any) => {
   return (
-    <View>
+    <SafeAreaView>
       <StatusBar translucent backgroundColor={colors.BrownPrimary} />
 
       {/* Header Start */}
@@ -97,9 +97,9 @@ const SpeechScreen = ({navigation}: any) => {
           ពាក្យស្លោកជាតិ ៣កុំ ១រាយការណ៍
         </Text>
       </View>
-
+    
       <ScrollView>
-        <View>
+      <View>
           <Text style={styles.TitleSection}>កុំពាក់ព័ន្ធ ៖</Text>
           <Text style={styles.detail}>
             កុំជួញដូរ កុំចែកចាយ កុំធ្វើខ្នងបង្អែក កុំឃុបឃិត និងកុំប្រើ
@@ -130,8 +130,10 @@ const SpeechScreen = ({navigation}: any) => {
           </Text>
         </View>
       </ScrollView>
+        
+  
       {/* Speech Detail start */}
-    </View>
+      </SafeAreaView>
   );
 };
 

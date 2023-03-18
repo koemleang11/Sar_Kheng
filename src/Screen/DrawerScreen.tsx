@@ -12,6 +12,7 @@ import React, {useState} from 'react';
 import colors from '../theme/colors';
 import {ScrollView} from 'react-native-gesture-handler';
 import {navigate} from '../navigation/MainStack';
+import { SafeAreaView } from 'react-navigation';
 
 const DrawerScreen = () => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -19,7 +20,7 @@ const DrawerScreen = () => {
     setIsEnabled((previousState: any) => !previousState);
 
   return (
-    <View>
+    <SafeAreaView style={{flex:1}}>
       <View style={{height: 300}}>
         <Image
           source={require('../assets/SplashImage/BgImage.png')}
@@ -160,6 +161,7 @@ const DrawerScreen = () => {
             borderWidth: 1,
             borderColor: colors.BrownPrimary,
             borderRadius: 10,
+            marginBottom:20,
           }}>
           <Image
             source={require('../assets/icons/Facebook.png')}
@@ -183,7 +185,7 @@ const DrawerScreen = () => {
           />
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

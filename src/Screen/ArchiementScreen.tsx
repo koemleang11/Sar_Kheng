@@ -39,7 +39,8 @@ const ArchiementScreen = ({navigation}: any) => {
                 marginHorizontal: 20,
                 justifyContent: 'flex-end',
                 borderRadius: 10,
-              }}></ImageBackground>
+              }}>  
+            </ImageBackground>
           </View>
           <View>
             <ImageBackground

@@ -4,12 +4,11 @@ import MainStack, {navigationRef} from './MainStack';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import MainDrawer from './MainDrawer';
+import colors from '../theme/colors';
 const Route = () => {
   return (
     <NavigationContainer ref={navigationRef}>
-      <SafeAreaView style={{flex: 1}}>
         <MainDrawer />
-      </SafeAreaView>
     </NavigationContainer>
   );
 };

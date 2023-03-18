@@ -33,6 +33,7 @@ const VideoScreen = () => {
                 fontSize: 16,
                 fontFamily: 'Battambang-Bold',
                 paddingTop: 10,
+                color:colors.Black
               }}>
               {data.title}
             </Text>
@@ -41,6 +42,8 @@ const VideoScreen = () => {
                 fontSize: 14,
                 fontFamily: 'Battambang-Regular',
                 paddingTop: 10,
+                color:colors.Smoke,
+                paddingBottom:10
               }}>
               {data.date}
             </Text>

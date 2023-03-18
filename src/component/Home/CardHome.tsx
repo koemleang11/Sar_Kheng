@@ -58,7 +58,7 @@ const CardHome  = ({data}: any) => {
                 marginHorizontal: 10,
                 backgroundColor: colors.BrownPrimary,
                 height: 28,
-                width: 150,
+                width: 180,
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'row',

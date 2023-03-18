@@ -148,7 +148,7 @@ const VideoDetailScreen = ({navigation, route}: any) => {
         }}>
         <View style={{flexDirection: 'row'}}>
           <Icon name="calendar" style={{paddingTop: 4, paddingRight: 5}} />
-          <Text>March 04, 2023</Text>
+          <Text style={{color:colors.Smoke}}>{data.date}</Text>
         </View>
       </View>
       <ScrollView>

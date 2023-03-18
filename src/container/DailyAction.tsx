@@ -75,7 +75,7 @@ const DailyAction = () => {
                 marginHorizontal: 10,
                 backgroundColor: colors.BrownPrimary,
                 height: 28,
-                width: 150,
+                width: 180,
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'row',
@@ -166,7 +166,7 @@ const DailyAction = () => {
           <Text
             style={{
               paddingLeft: 20,
-              fontSize: 20,
+              fontSize: 18,
               color: colors.white,
               fontFamily: 'Moul-Regular',
               textAlign: 'center',

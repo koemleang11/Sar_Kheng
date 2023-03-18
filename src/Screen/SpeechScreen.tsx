@@ -15,8 +15,8 @@ import {navigate, reset} from '../navigation/MainStack';
 
 const SpeechScreen = ({navigation}: any) => {
   return (
-    <SafeAreaView>
-      <StatusBar translucent backgroundColor={colors.BrownPrimary} />
+    <SafeAreaView style={{flex:1}}>
+      <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
 
       {/* Header Start */}
 
@@ -149,7 +149,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingBottom: 10,
     fontSize: 16,
-    textAlign: 'justify',
     fontFamily: 'Battambang-Regular',
     color: colors.Black,
   },

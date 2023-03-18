@@ -14,7 +14,7 @@ const TextTick = () => {
     <View style={styles.container}>
             <TextTicker
               style={{
-                fontSize: 16,
+                fontSize: 14,
                 color: colors.BrownPrimary,
                 fontFamily: 'Moul-Regular',
               }}

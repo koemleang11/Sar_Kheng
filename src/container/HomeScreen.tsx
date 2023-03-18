@@ -22,7 +22,9 @@ import {openDrawer} from '../navigation/MainDrawer';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import {navigate} from '../navigation/MainStack';
 import CardHome from '../component/Home/CardHome';
-import TextTick from '../component/Home/TextTicker'
+import TextTick from '../component/Home/TextTicker';
+import Header from '../component/Home/Header';
+
 const {width} = Dimensions.get('screen');
 
 const HomeScreen = () => {
@@ -30,51 +32,14 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
-      <View
-        style={styles.HeaderContainer}>
-        <TouchableOpacity onPress={() => openDrawer()}>
-          <Image
-            source={require('../assets/icons/menu-02.png')}
-            style={{height: 25, width: 25, tintColor: colors.white}}
-          />
-        </TouchableOpacity>
-        <View>
-          <Text
-            style={{
-              fontSize: 18,
-              color: colors.white,
-              fontFamily: 'Moul-Regular',
-            }}>
-            សម្តេចក្រឡាហោម ស ខេង
-          </Text>
-        </View>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() =>
-            Linking.openURL(
-              'https://www.youtube.com/results?search_query=sar+kheng',
-            )
-          }>
-          <View>
-            <Image
-              source={require('../assets/icons/Yotube3.png')}
-              style={{height: 35, width: 35}}
-            />
-          </View>
-        </TouchableOpacity>
-      </View>
+      <Header/>
       <View style={{height: 260}}>
         <YoutubePlayer
           webViewStyle={{opacity: 0.99}}
           height={200}
           videoId={'LtvXKx8aYO0'}
         />
-        {/* Text slide Animation start */}
-
           <TextTick/>
-
-        {/* Text slide Animation end */}
-
       </View>
       <FlatList data={data} renderItem={({item}) => <CardHome data={item} />} />
     </SafeAreaView>

@@ -19,7 +19,6 @@ import ContactScreen from '../Screen/ContactScreen';
 import ArchiementScreen from '../Screen/ArchiementScreen';
 import VideoScreen from '../Screen/VideoScreen';
 import VideoDetailScreen from '../Screen/VideoDetailScreen';
-import ShareButton from '../component/ShareButton';
 export const navigationRef: any = createNavigationContainerRef();
 
 export function navigate(name: string, params: any = {}) {
@@ -67,8 +66,6 @@ const MainStack = () => {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen component={MainDrawer} name="MainDrawer" />
-      <Stack.Screen component={DrawerScreen} name="DrawerScreen" />
       <Stack.Screen component={HomeScreen} name="HomeScreen" />
       <Stack.Screen component={DetailScreen} name="DetailScreen" />
       <Stack.Screen component={NotificationScreen} name="NotificationScreen" />

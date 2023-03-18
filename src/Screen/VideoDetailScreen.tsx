@@ -65,7 +65,7 @@ const VideoDetailScreen = ({navigation, route}: any) => {
               fontFamily: 'Moul-Regular',
               textAlign: 'center',
             }}>
-            ពត៌មានលម្អិត
+            ព័ត៌មានលម្អិត
           </Text>
         </View>
         <View style={{flexDirection: 'row'}}>

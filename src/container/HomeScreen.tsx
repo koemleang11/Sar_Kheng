@@ -14,13 +14,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import colors from '../theme/colors';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import data from '../temp/DataHome';
-
-import TextTicker from 'react-native-text-ticker';
-import {openDrawer} from '../navigation/MainDrawer';
 import YoutubePlayer from 'react-native-youtube-iframe';
-import {navigate} from '../navigation/MainStack';
 import CardHome from '../component/Home/CardHome';
 import TextTick from '../component/Home/TextTicker';
 import Header from '../component/Home/Header';

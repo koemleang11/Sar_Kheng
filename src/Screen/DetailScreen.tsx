@@ -22,6 +22,13 @@ import { metrics, padding_horizontal, screenHeight, screenWidth } from '../theme
 import Share from 'react-native-share';
 const {width} = Dimensions.get('screen');
 
+
+interface Props {
+  onShare?: () => void
+  onIncrease?: () => void
+  onDecrease?: () => void
+}
+
 const DetailScreen = ({navigation, route}: any) => {
   const [fontSize, setFontSize] = useState(size.font22);
   const onIncrease = () => {
@@ -98,7 +105,8 @@ const DetailScreen = ({navigation, route}: any) => {
           </Text>
         </View>
           <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity activeOpacity={0.5} onPress={onIncrease}>
+          <TouchableOpacity   onPress={onDecrease}
+            activeOpacity={0.8}>
           <View
             style={{
               backgroundColor: colors.BrownPrimary,
@@ -121,7 +129,9 @@ const DetailScreen = ({navigation, route}: any) => {
           </View>
           </TouchableOpacity>
         
-          <TouchableOpacity activeOpacity={0.5} onPress={onIncrease}>
+          <TouchableOpacity 
+            onPress={onIncrease}
+            activeOpacity={0.8}>
           <View
             style={{
               backgroundColor: colors.BrownPrimary,
@@ -138,7 +148,7 @@ const DetailScreen = ({navigation, route}: any) => {
                 fontSize: 20,
                 color: colors.white,
                 fontFamily: 'Moul-Regular',
-              }} onPress={onIncrease}>
+              }} >
               អ
             </Text>
           </View>
@@ -205,7 +215,6 @@ const DetailScreen = ({navigation, route}: any) => {
         </View>
         <View>
         <CustomAutoWebView />
-        </View>
         <View
           style={{
             marginTop: 10,
@@ -215,6 +224,7 @@ const DetailScreen = ({navigation, route}: any) => {
           <Image source={data.images[1]} style={styles.imgDeatil} />
           <Image source={data.images[2]} style={styles.imgDeatil} />
           <Image source={data.images[3]} style={styles.imgDeatil} />
+        </View>
         </View>
       </ScrollView>
       </SafeAreaView>
@@ -238,5 +248,9 @@ const styles = StyleSheet.create({
   imgDeatil: {
     width: '100%',
     marginBottom: 10,
+  },
+  menuButton: {
+    marginTop: -screenWidth(5),
+    padding: screenWidth(10),
   },
 });

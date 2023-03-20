@@ -23,18 +23,17 @@ import Header from '../component/Home/Header';
 const {width} = Dimensions.get('screen');
 
 const HomeScreen = () => {
-
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
-      <Header/>
+      <Header />
       <View style={{height: 260}}>
         <YoutubePlayer
           webViewStyle={{opacity: 0.99}}
           height={200}
           videoId={'LtvXKx8aYO0'}
         />
-          <TextTick/>
+        <TextTick />
       </View>
       <FlatList data={data} renderItem={({item}) => <CardHome data={item} />} />
     </SafeAreaView>
@@ -52,5 +51,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10,
     elevation: 12,
-  }
+  },
 });

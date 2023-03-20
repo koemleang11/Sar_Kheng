@@ -11,18 +11,48 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import colors from '../theme/colors';
 import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {goBack, navigate} from '../navigation/MainStack';
 import CustomAutoWebView from '../component/CustomeAutoHight/CustomAutoWebView';
+import { size } from '../theme/fonts'
+import { metrics, padding_horizontal, screenHeight, screenWidth } from '../theme/layouts'
+import Share from 'react-native-share';
 const {width} = Dimensions.get('screen');
 
 const DetailScreen = ({navigation, route}: any) => {
+  const [fontSize, setFontSize] = useState(size.font22);
+  const onIncrease = () => {
+    if (fontSize >= size.font26) {
+      return;
+    }
+    setFontSize(fontSize + screenWidth(2));
+  };
+
+  const onDecrease = () => {
+    if (fontSize <= size.font18) {
+      return;
+    }
+    setFontSize(fontSize - screenWidth(2));
+  };
+
+  const CustomShare = () => {
+    const shareOptions = {
+    title: 'Share via',
+    url: 'some share url',
+  };
+
+  Share.open(shareOptions)
+    .then((res) => { console.log(res) })
+    .catch((err) => { err && console.log(err); });
+  };
+
+
   const data = route.params;
   return (
-    <View>
+    <SafeAreaView style={{flex:1}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
 
       {/* Header start */}
@@ -67,7 +97,8 @@ const DetailScreen = ({navigation, route}: any) => {
             ព័ត៌មានលម្អិត
           </Text>
         </View>
-        <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity activeOpacity={0.5} onPress={onIncrease}>
           <View
             style={{
               backgroundColor: colors.BrownPrimary,
@@ -84,10 +115,13 @@ const DetailScreen = ({navigation, route}: any) => {
                 fontSize: 16,
                 color: colors.white,
                 fontFamily: 'Moul-Regular',
-              }}>
+              }} >
               អ
             </Text>
           </View>
+          </TouchableOpacity>
+        
+          <TouchableOpacity activeOpacity={0.5} onPress={onIncrease}>
           <View
             style={{
               backgroundColor: colors.BrownPrimary,
@@ -104,10 +138,12 @@ const DetailScreen = ({navigation, route}: any) => {
                 fontSize: 20,
                 color: colors.white,
                 fontFamily: 'Moul-Regular',
-              }}>
+              }} onPress={onIncrease}>
               អ
             </Text>
           </View>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.5} onPress={CustomShare}>
           <View
             style={{
               backgroundColor: colors.BrownPrimary,
@@ -117,12 +153,12 @@ const DetailScreen = ({navigation, route}: any) => {
               justifyContent: 'center',
               alignItems: 'center',
               borderRadius: 10,
-            }}>
+            }} >
             <MaterailIcon name="ios-share" size={20} color={colors.white} />
           </View>
+          </TouchableOpacity>
         </View>
       </View>
-
       {/* Header end */}
       <ScrollView>
         <ImageBackground
@@ -167,7 +203,9 @@ const DetailScreen = ({navigation, route}: any) => {
             <Text>{data.date}</Text>
           </View>
         </View>
+        <View>
         <CustomAutoWebView />
+        </View>
         <View
           style={{
             marginTop: 10,
@@ -179,7 +217,7 @@ const DetailScreen = ({navigation, route}: any) => {
           <Image source={data.images[3]} style={styles.imgDeatil} />
         </View>
       </ScrollView>
-    </View>
+      </SafeAreaView>
   );
 };
 

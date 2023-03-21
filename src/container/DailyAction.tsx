@@ -22,37 +22,35 @@ import {goBack, navigate, reset} from '../navigation/MainStack';
 const {width} = Dimensions.get('screen');
 
 const DailyAction = () => {
-
   // Detail Container start
   const Card = ({data}: any) => {
     return (
-      <TouchableOpacity
-        activeOpacity={0.8}
-        onPress={() => navigate('DetailScreen', data)}>
-        <View
-          style={{height: 231, justifyContent: 'flex-end', marginBottom: 20}}>
-          <Swiper>
-            <View>
-              <ImageBackground
-                source={data.images[0]}
-                style={styles.ImageBg}></ImageBackground>
-            </View>
-            <View>
-              <ImageBackground
-                source={data.images[1]}
-                style={{
-                  height: 192,
-                  marginHorizontal: 20,
-                  justifyContent: 'flex-end',
-                  borderRadius: 10,
-                }}></ImageBackground>
-            </View>
-            <View>
-              <ImageBackground
-                source={data.images[2]}
-                style={styles.ImageBg}></ImageBackground>
-            </View>
-          </Swiper>
+      <View style={{height: 231, justifyContent: 'flex-end', marginBottom: 20}}>
+        <Swiper>
+          <View>
+            <ImageBackground
+              source={data.images[0]}
+              style={styles.ImageBg}></ImageBackground>
+          </View>
+          <View>
+            <ImageBackground
+              source={data.images[1]}
+              style={{
+                height: 192,
+                marginHorizontal: 20,
+                justifyContent: 'flex-end',
+                borderRadius: 10,
+              }}></ImageBackground>
+          </View>
+          <View>
+            <ImageBackground
+              source={data.images[2]}
+              style={styles.ImageBg}></ImageBackground>
+          </View>
+        </Swiper>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigate('DetailScreen', data)}>
           <View style={styles.TitleContainer}>
             <Text style={{color: colors.white, fontFamily: 'Battambang-Bold'}}>
               {data.title}
@@ -115,15 +113,15 @@ const DailyAction = () => {
               </View>
             </View>
           </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
     );
   };
 
-   // Detail Container end
+  // Detail Container end
 
   return (
-    <View style={{flex:1,marginBottom:20}}>
+    <View style={{flex: 1, marginBottom: 20}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
       <View
         style={{

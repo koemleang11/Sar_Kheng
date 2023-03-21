@@ -152,11 +152,13 @@ const VideoDetailScreen = (props: any) => {
       </View>
 
       {/* Header end */}
+      <View >
       <YoutubePlayer
         webViewStyle={{opacity: 0.99}}
-        height={200}
+        height={230}
         videoId={data.link}
       />
+      </View>
       <View style={styles.imageDetails}>
         <Text
           style={{

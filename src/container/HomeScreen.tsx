@@ -27,10 +27,10 @@ const HomeScreen = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
       <Header />
-      <View style={{height: 260}}>
+      <View style={{height: 270}}>
         <YoutubePlayer
           webViewStyle={{opacity: 0.99}}
-          height={200}
+          height={220}
           videoId={'LtvXKx8aYO0'}
         />
         <TextTick />

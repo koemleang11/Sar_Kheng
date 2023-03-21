@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useRef} from 'react';
+import React from 'react';
 import {FlatList, View, Text, TouchableOpacity} from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import colors from '../theme/colors';
@@ -16,7 +16,9 @@ const VideoScreen = () => {
         <View>
           <YoutubePlayer
             webViewStyle={{opacity: 0.99}}
-            height={200}
+            height={230}
+            play={false}
+            mute
             videoId={data.link}
           />
           <View

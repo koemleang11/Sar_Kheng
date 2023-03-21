@@ -17,7 +17,7 @@ const TextTick = () => {
             fontFamily: 'Moul-Regular',
             marginHorizontal: 20,
           }}
-          duration={60000}
+          duration={70000}
           bounce={false}
           bounceDelay={0}
           repeatSpacer={0}>

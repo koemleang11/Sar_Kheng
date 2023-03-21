@@ -15,7 +15,7 @@ const TextTick = () => {
             fontSize: 14,
             color: colors.BrownPrimary,
             fontFamily: 'Moul-Regular',
-            marginHorizontal:20
+            // marginHorizontal:20
           }}
           duration={20000}
           bounce={false}

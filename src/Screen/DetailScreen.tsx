@@ -22,28 +22,35 @@ import { metrics, padding_horizontal, screenHeight, screenWidth } from '../theme
 import Share from 'react-native-share';
 const {width} = Dimensions.get('screen');
 
-
 interface Props {
+  children?: React.ReactNode
   onShare?: () => void
   onIncrease?: () => void
   onDecrease?: () => void
 }
-
-const DetailScreen = ({navigation, route}: any) => {
-  const [fontSize, setFontSize] = useState(size.font22);
+const DetailScreen = (props: any) => {
+  const [_fontSize, setFontSize] = useState(size.font22);
   const onIncrease = () => {
-    if (fontSize >= size.font26) {
-      return;
-    }
-    setFontSize(fontSize + screenWidth(2));
+    // if (fontSize >= 16) {
+    //   return;
+    // }
+    // setFontSize(fontSize + screenWidth(2));
   };
 
   const onDecrease = () => {
-    if (fontSize <= size.font18) {
-      return;
-    }
-    setFontSize(fontSize - screenWidth(2));
+    // if (fontSize <= 24) {
+    //   return;
+    // }
+    // setFontSize(fontSize - screenWidth(2));
   };
+
+  const onFonsize =(status:boolean)=>{
+    if(status){
+      setFontSize(_fontSize +1)
+    }else{
+      setFontSize(_fontSize -1)
+    }
+  }
 
   const CustomShare = () => {
     const shareOptions = {
@@ -57,13 +64,13 @@ const DetailScreen = ({navigation, route}: any) => {
   };
 
 
-  const data = route.params;
+  const data = props.route.params;
   return (
     <SafeAreaView style={{flex:1}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
 
       {/* Header start */}
-
+   
       <View
         style={{
           flexDirection: 'row',
@@ -105,7 +112,7 @@ const DetailScreen = ({navigation, route}: any) => {
           </Text>
         </View>
           <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity   onPress={onDecrease}
+          <TouchableOpacity   onPress={()=>onFonsize(false)}
             activeOpacity={0.8}>
           <View
             style={{
@@ -130,7 +137,7 @@ const DetailScreen = ({navigation, route}: any) => {
           </TouchableOpacity>
         
           <TouchableOpacity 
-            onPress={onIncrease}
+            onPress={()=>onFonsize(true)}
             activeOpacity={0.8}>
           <View
             style={{
@@ -209,12 +216,12 @@ const DetailScreen = ({navigation, route}: any) => {
             marginBottom: 10,
           }}>
           <View style={{flexDirection: 'row'}}>
-            <Icon name="calendar" style={{paddingTop: 4, paddingRight: 5}} />
+            <Icon name="calendar" style={{paddingTop: 4, paddingRight: 5,color:colors.Smoke}} />
             <Text>{data.date}</Text>
           </View>
         </View>
         <View>
-        <CustomAutoWebView />
+        <CustomAutoWebView fontSize={_fontSize}/>
         <View
           style={{
             marginTop: 10,

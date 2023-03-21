@@ -13,8 +13,12 @@ import colors from '../theme/colors';
 import {ScrollView} from 'react-native-gesture-handler';
 import {navigate} from '../navigation/MainStack';
 import { SafeAreaView } from 'react-navigation';
+import data from '../temp/ContactList'
 
-const DrawerScreen = () => {
+
+
+const DrawerScreen = ({data}: any) => {
+  
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () =>
     setIsEnabled((previousState: any) => !previousState);
@@ -163,26 +167,36 @@ const DrawerScreen = () => {
             borderRadius: 10,
             marginBottom:20,
           }}>
+          <TouchableOpacity  onPress={() => Linking.openURL('https://www.facebook.com/SamdechKrolahomSarkheng?mibextid=LQQJ4d')}>
           <Image
             source={require('../assets/icons/Facebook.png')}
             style={{width: 24, height: 24}}
           />
+          </TouchableOpacity>
+          <TouchableOpacity  onPress={() => Linking.openURL('https://t.me/SAMDECHKROLAHOM?mibextid=ncKXMA')}>
           <Image
             source={require('../assets/icons/Telegram.png')}
             style={{width: 24, height: 24}}
           />
+          </TouchableOpacity>
+          <TouchableOpacity  onPress={() => Linking.openURL('https://twitter.com/SamdechKrolahom')}>
           <Image
             source={require('../assets/icons/Tweeter.png')}
             style={{width: 24, height: 24}}
           />
+          </TouchableOpacity>
+          <TouchableOpacity  onPress={() => Linking.openURL('https://www.youtube.com/results?search_query=sar+kheng')}>
           <Image
             source={require('../assets/icons/Youtube.png')}
             style={{width: 24, height: 24}}
           />
+          </TouchableOpacity>
+          <TouchableOpacity  onPress={() => Linking.openURL('https://samdechkrolahomsarkheng.com/?mibextid=ncKXMA')}>
           <Image
             source={require('../assets/icons/Website.png')}
             style={{width: 24, height: 24}}
           />
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

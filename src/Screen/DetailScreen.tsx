@@ -35,19 +35,6 @@ interface Props {
 }
 const DetailScreen = (props: any) => {
   const [_fontSize, setFontSize] = useState(size.font22);
-  const onIncrease = () => {
-    // if (fontSize >= 16) {
-    //   return;
-    // }
-    // setFontSize(fontSize + screenWidth(2));
-  };
-
-  const onDecrease = () => {
-    // if (fontSize <= 24) {
-    //   return;
-    // }
-    // setFontSize(fontSize - screenWidth(2));
-  };
 
   const onFonsize = (status: boolean) => {
     if (status) {
@@ -89,35 +76,42 @@ const DetailScreen = (props: any) => {
           paddingHorizontal: 10,
           elevation: 8,
         }}>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => goBack()}>
-          <View
-            style={{
-              width: 32,
-              height: 32,
-              elevation: 30,
-              backgroundColor: colors.BrownPrimary,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-              paddingLeft: 5,
-            }}>
-            <MaterailIcon
-              name="arrow-back-ios"
-              size={20}
-              color={colors.white}
-            />
+        <View
+          style={{
+            flexDirection: 'row',
+            marginRight: 20,
+          }}>
+          <TouchableOpacity activeOpacity={0.8} onPress={() => goBack()}>
+            <View
+              style={{
+                width: 32,
+                height: 32,
+                elevation: 8,
+                backgroundColor: colors.BrownPrimary,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+                paddingLeft: 5,
+              }}>
+              <MaterailIcon
+                name="arrow-back-ios"
+                size={20}
+                color={colors.white}
+              />
+            </View>
+          </TouchableOpacity>
+          <View>
+            <Text
+              style={{
+                fontSize: 20,
+                color: colors.white,
+                fontFamily: 'Moul-Regular',
+                justifyContent: 'flex-start',
+                paddingLeft: 15,
+              }}>
+              ព័ត៌មានលម្អិត
+            </Text>
           </View>
-        </TouchableOpacity>
-        <View>
-          <Text
-            style={{
-              fontSize: 20,
-              color: colors.white,
-              fontFamily: 'Moul-Regular',
-              textAlign: 'center',
-            }}>
-            ព័ត៌មានលម្អិត
-          </Text>
         </View>
         <View style={{flexDirection: 'row'}}>
           <TouchableOpacity

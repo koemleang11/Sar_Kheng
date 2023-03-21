@@ -12,23 +12,20 @@ import React, {useState} from 'react';
 import colors from '../theme/colors';
 import {ScrollView} from 'react-native-gesture-handler';
 import {navigate} from '../navigation/MainStack';
-import { SafeAreaView } from 'react-navigation';
-import data from '../temp/ContactList'
-
-
+import {SafeAreaView} from 'react-navigation';
+import data from '../temp/ContactList';
 
 const DrawerScreen = ({data}: any) => {
-  
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () =>
     setIsEnabled((previousState: any) => !previousState);
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       <View style={{height: 300}}>
         <Image
-          source={require('../assets/SplashImage/BgImage.png')}
-          style={{width: '100%', height: 300, resizeMode: 'cover'}}
+          source={require('../assets/SplashImage/BgImage2.png')}
+          style={{width: '100%', height: 310, resizeMode: 'cover'}}
         />
       </View>
       <View
@@ -165,37 +162,58 @@ const DrawerScreen = ({data}: any) => {
             borderWidth: 1,
             borderColor: colors.BrownPrimary,
             borderRadius: 10,
-            marginBottom:20,
+            marginBottom: 20,
           }}>
-          <TouchableOpacity  onPress={() => Linking.openURL('https://www.facebook.com/SamdechKrolahomSarkheng?mibextid=LQQJ4d')}>
-          <Image
-            source={require('../assets/icons/Facebook.png')}
-            style={{width: 24, height: 24}}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              Linking.openURL(
+                'https://www.facebook.com/SamdechKrolahomSarkheng?mibextid=LQQJ4d',
+              )
+            }>
+            <Image
+              source={require('../assets/icons/Facebook.png')}
+              style={{width: 24, height: 24}}
+            />
           </TouchableOpacity>
-          <TouchableOpacity  onPress={() => Linking.openURL('https://t.me/SAMDECHKROLAHOM?mibextid=ncKXMA')}>
-          <Image
-            source={require('../assets/icons/Telegram.png')}
-            style={{width: 24, height: 24}}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              Linking.openURL('https://t.me/SAMDECHKROLAHOM?mibextid=ncKXMA')
+            }>
+            <Image
+              source={require('../assets/icons/Telegram.png')}
+              style={{width: 24, height: 24}}
+            />
           </TouchableOpacity>
-          <TouchableOpacity  onPress={() => Linking.openURL('https://twitter.com/SamdechKrolahom')}>
-          <Image
-            source={require('../assets/icons/Tweeter.png')}
-            style={{width: 24, height: 24}}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              Linking.openURL('https://twitter.com/SamdechKrolahom')
+            }>
+            <Image
+              source={require('../assets/icons/Tweeter.png')}
+              style={{width: 24, height: 24}}
+            />
           </TouchableOpacity>
-          <TouchableOpacity  onPress={() => Linking.openURL('https://www.youtube.com/results?search_query=sar+kheng')}>
-          <Image
-            source={require('../assets/icons/Youtube.png')}
-            style={{width: 24, height: 24}}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              Linking.openURL(
+                'https://www.youtube.com/results?search_query=sar+kheng',
+              )
+            }>
+            <Image
+              source={require('../assets/icons/Youtube.png')}
+              style={{width: 24, height: 24}}
+            />
           </TouchableOpacity>
-          <TouchableOpacity  onPress={() => Linking.openURL('https://samdechkrolahomsarkheng.com/?mibextid=ncKXMA')}>
-          <Image
-            source={require('../assets/icons/Website.png')}
-            style={{width: 24, height: 24}}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              Linking.openURL(
+                'https://samdechkrolahomsarkheng.com/?mibextid=ncKXMA',
+              )
+            }>
+            <Image
+              source={require('../assets/icons/Website.png')}
+              style={{width: 24, height: 24}}
+            />
           </TouchableOpacity>
         </View>
       </ScrollView>

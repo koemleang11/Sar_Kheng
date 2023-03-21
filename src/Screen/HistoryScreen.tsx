@@ -35,7 +35,7 @@ const HistoryScreen = () => {
             style={{
               width: 32,
               height: 32,
-              elevation: 30,
+              elevation: 8,
               backgroundColor: colors.BrownPrimary,
               justifyContent: 'center',
               alignItems: 'center',
@@ -54,7 +54,7 @@ const HistoryScreen = () => {
           }}>
           <Text
             style={{
-              paddingLeft: 30,
+              paddingLeft: 8,
               fontSize: 18,
               color: colors.white,
               fontFamily: 'Moul-Regular',
@@ -64,8 +64,8 @@ const HistoryScreen = () => {
         </View>
       </View>
       <Image
-        source={require('../assets/SplashImage/BG.png')}
-        style={{width: '100%', height: 395}}
+        source={require('../assets/SplashImage/BgImage2.png')}
+        style={{width: '100%', height: 380}}
       />
       <ScrollView>
         <View style={{marginHorizontal: 20, marginTop: 20}}>

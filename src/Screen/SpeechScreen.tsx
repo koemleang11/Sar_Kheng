@@ -27,7 +27,7 @@ const SpeechScreen = ({navigation}: any) => {
           height: 48,
           alignItems: 'center',
           paddingHorizontal: 20,
-          elevation: 12,
+          elevation: 20,
         }}>
         <TouchableOpacity
           activeOpacity={0.8}
@@ -36,7 +36,7 @@ const SpeechScreen = ({navigation}: any) => {
             style={{
               width: 32,
               height: 32,
-              elevation: 30,
+              elevation: 8,
               backgroundColor: colors.BrownPrimary,
               justifyContent: 'center',
               alignItems: 'center',
@@ -70,7 +70,7 @@ const SpeechScreen = ({navigation}: any) => {
       {/* Imgae  */}
       <ScrollView>
         <Image
-          source={require('../assets/SplashImage/BG.png')}
+          source={require('../assets/SplashImage/BgImage2.png')}
           style={{width: '100%', height: 380, resizeMode: 'cover'}}
         />
 

@@ -38,8 +38,9 @@ const ContactList = [
   },
   {
     images: require('../assets/icons/Location.png'),
-    Title: '#275 ផ្លូវព្រះនរោត្តម, ក្រុងភ្នំពេញ',
-    link: 'https://www.facebook.com/SamdechKrolahomSarkheng/',
+    Title:
+      '#275 ​មហាវិថីព្រះនរោត្តម, រាជធានីភ្នំពេញ, ព្រះរាជាណាចក្រកម្ពុជា, Phnom Penh, Kingdom of Cambodia',
+    link: '#275 ​មហាវិថីព្រះនរោត្តម, រាជធានីភ្នំពេញ, ព្រះរាជាណាចក្រកម្ពុជា, Phnom Penh, Kingdom of Cambodia',
   },
 ];
 

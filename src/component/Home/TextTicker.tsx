@@ -15,13 +15,12 @@ const TextTick = () => {
             fontSize: 14,
             color: colors.BrownPrimary,
             fontFamily: 'Moul-Regular',
-            // marginHorizontal:20
+            marginHorizontal: 20,
           }}
           duration={20000}
           bounce={false}
           bounceDelay={10}
-          repeatSpacer = {-120}
-        >
+          repeatSpacer={-120}>
           ពាក្យស្លោកជាតិ ៣កុំ ១រាយការណ៍៖ កុំពាក់ព័ន្ធ៖ កុំអន្តរាគមន៍៖ កុំលើកលែង៖
           មួយរាយការណ៍៖
         </TextTicker>
@@ -41,6 +40,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 12,
-    paddingHorizontal:-10
+    paddingHorizontal: -10,
   },
 });

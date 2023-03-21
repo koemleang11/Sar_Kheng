@@ -48,7 +48,7 @@ const ContactScreen = ({navigation}: any) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, marginBottom: 10}}>
       <View
         style={{
           flexDirection: 'row',

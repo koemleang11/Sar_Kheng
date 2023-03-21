@@ -121,7 +121,7 @@ const DailyAction = () => {
   // Detail Container end
 
   return (
-    <View style={{flex: 1, marginBottom: 20}}>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
       <View
         style={{
@@ -174,7 +174,7 @@ const DailyAction = () => {
         </View>
       </View>
       <FlatList data={data} renderItem={({item}) => <Card data={item} />} />
-    </View>
+    </SafeAreaView>
   );
 };
 

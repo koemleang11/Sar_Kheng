@@ -39,8 +39,7 @@ const ArchiementScreen = ({navigation}: any) => {
                 marginHorizontal: 20,
                 justifyContent: 'flex-end',
                 borderRadius: 10,
-              }}>  
-            </ImageBackground>
+              }}></ImageBackground>
           </View>
           <View>
             <ImageBackground
@@ -48,54 +47,54 @@ const ArchiementScreen = ({navigation}: any) => {
               style={styles.ImageBg}></ImageBackground>
           </View>
         </Swiper>
-        <View style={styles.TitleContainer}>
-          <Text
-            style={{
-              fontSize: 16,
-              color: colors.white,
-              fontWeight: 'bold',
-              fontFamily: 'Battambang-Bold',
-            }}>
-            {data.title}
-          </Text>
-        </View>
-        <View
-          style={{
-            height: 50,
-            justifyContent: 'space-between',
-            marginHorizontal: 20,
-            backgroundColor: colors.Gray,
-            borderBottomLeftRadius: 10,
-            borderBottomRightRadius: 10,
-            flexDirection: 'row',
-            paddingTop: 10,
-            elevation: 12,
-          }}>
-          <View
-            style={{
-              marginHorizontal: 10,
-              backgroundColor: colors.BrownPrimary,
-              height: 28,
-              width: 180,
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'row',
-              borderRadius: 10,
-            }}>
-            <Icon name="calendar" style={{color: colors.white}} />
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigate('DetailScreen', data)}>
+          <View style={styles.TitleContainer}>
             <Text
               style={{
-                paddingLeft: 10,
-                fontFamily: 'Battambang-Bold',
+                fontSize: 16,
                 color: colors.white,
+                fontWeight: 'bold',
+                fontFamily: 'Battambang-Bold',
               }}>
-              {data.date}
+              {data.title}
             </Text>
           </View>
-          <View>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => navigate('DetailScreen', data)}>
+          <View
+            style={{
+              height: 50,
+              justifyContent: 'space-between',
+              marginHorizontal: 20,
+              backgroundColor: colors.Gray,
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+              flexDirection: 'row',
+              paddingTop: 10,
+              elevation: 12,
+            }}>
+            <View
+              style={{
+                marginHorizontal: 10,
+                backgroundColor: colors.BrownPrimary,
+                height: 28,
+                width: 180,
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'row',
+                borderRadius: 10,
+              }}>
+              <Icon name="calendar" style={{color: colors.white}} />
+              <Text
+                style={{
+                  paddingLeft: 10,
+                  fontFamily: 'Battambang-Bold',
+                  color: colors.white,
+                }}>
+                {data.date}
+              </Text>
+            </View>
+            <View>
               <View style={{flexDirection: 'row'}}>
                 <Text
                   style={{
@@ -116,9 +115,9 @@ const ArchiementScreen = ({navigation}: any) => {
                   }}
                 />
               </View>
-            </TouchableOpacity>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
       </View>
     );
   };

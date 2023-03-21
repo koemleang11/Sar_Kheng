@@ -11,22 +11,27 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import colors from '../theme/colors';
 import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {goBack, navigate} from '../navigation/MainStack';
 import CustomAutoWebView from '../component/CustomeAutoHight/CustomAutoWebView';
-import { size } from '../theme/fonts'
-import { metrics, padding_horizontal, screenHeight, screenWidth } from '../theme/layouts'
+import {size} from '../theme/fonts';
+import {
+  metrics,
+  padding_horizontal,
+  screenHeight,
+  screenWidth,
+} from '../theme/layouts';
 import Share from 'react-native-share';
 const {width} = Dimensions.get('screen');
 
 interface Props {
-  children?: React.ReactNode
-  onShare?: () => void
-  onIncrease?: () => void
-  onDecrease?: () => void
+  children?: React.ReactNode;
+  onShare?: () => void;
+  onIncrease?: () => void;
+  onDecrease?: () => void;
 }
 const DetailScreen = (props: any) => {
   const [_fontSize, setFontSize] = useState(size.font22);
@@ -44,33 +49,36 @@ const DetailScreen = (props: any) => {
     // setFontSize(fontSize - screenWidth(2));
   };
 
-  const onFonsize =(status:boolean)=>{
-    if(status){
-      setFontSize(_fontSize +1)
-    }else{
-      setFontSize(_fontSize -1)
+  const onFonsize = (status: boolean) => {
+    if (status) {
+      setFontSize(_fontSize + 1);
+    } else {
+      setFontSize(_fontSize - 1);
     }
-  }
+  };
 
   const CustomShare = () => {
     const shareOptions = {
-    title: 'Share via',
-    url: 'some share url',
-  };
+      title: 'Share via',
+      url: 'some share url',
+    };
 
-  Share.open(shareOptions)
-    .then((res) => { console.log(res) })
-    .catch((err) => { err && console.log(err); });
+    Share.open(shareOptions)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        err && console.log(err);
+      });
   };
-
 
   const data = props.route.params;
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
 
       {/* Header start */}
-   
+
       <View
         style={{
           flexDirection: 'row',
@@ -111,68 +119,67 @@ const DetailScreen = (props: any) => {
             ព័ត៌មានលម្អិត
           </Text>
         </View>
-          <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity   onPress={()=>onFonsize(false)}
+        <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity
+            onPress={() => onFonsize(false)}
             activeOpacity={0.8}>
-          <View
-            style={{
-              backgroundColor: colors.BrownPrimary,
-              elevation: 5,
-              height: 32,
-              width: 32,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-              marginRight: 10,
-            }}>
-            <Text
+            <View
               style={{
-                fontSize: 16,
-                color: colors.white,
-                fontFamily: 'Moul-Regular',
-              }} >
-              អ
-            </Text>
-          </View>
+                backgroundColor: colors.BrownPrimary,
+                elevation: 5,
+                height: 32,
+                width: 32,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+                marginRight: 10,
+              }}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: colors.white,
+                  fontFamily: 'Moul-Regular',
+                }}>
+                អ
+              </Text>
+            </View>
           </TouchableOpacity>
-        
-          <TouchableOpacity 
-            onPress={()=>onFonsize(true)}
-            activeOpacity={0.8}>
-          <View
-            style={{
-              backgroundColor: colors.BrownPrimary,
-              elevation: 5,
-              height: 32,
-              width: 32,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-              marginRight: 10,
-            }}>
-            <Text
+
+          <TouchableOpacity onPress={() => onFonsize(true)} activeOpacity={0.8}>
+            <View
               style={{
-                fontSize: 20,
-                color: colors.white,
-                fontFamily: 'Moul-Regular',
-              }} >
-              អ
-            </Text>
-          </View>
+                backgroundColor: colors.BrownPrimary,
+                elevation: 5,
+                height: 32,
+                width: 32,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+                marginRight: 10,
+              }}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: colors.white,
+                  fontFamily: 'Moul-Regular',
+                }}>
+                អ
+              </Text>
+            </View>
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.5} onPress={CustomShare}>
-          <View
-            style={{
-              backgroundColor: colors.BrownPrimary,
-              elevation: 5,
-              height: 32,
-              width: 32,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-            }} >
-            <MaterailIcon name="ios-share" size={20} color={colors.white} />
-          </View>
+            <View
+              style={{
+                backgroundColor: colors.BrownPrimary,
+                elevation: 5,
+                height: 32,
+                width: 32,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+              }}>
+              <MaterailIcon name="ios-share" size={20} color={colors.white} />
+            </View>
           </TouchableOpacity>
         </View>
       </View>
@@ -216,25 +223,28 @@ const DetailScreen = (props: any) => {
             marginBottom: 10,
           }}>
           <View style={{flexDirection: 'row'}}>
-            <Icon name="calendar" style={{paddingTop: 4, paddingRight: 5,color:colors.Smoke}} />
+            <Icon
+              name="calendar"
+              style={{paddingTop: 4, paddingRight: 5, color: colors.Smoke}}
+            />
             <Text>{data.date}</Text>
           </View>
         </View>
         <View>
-        <CustomAutoWebView fontSize={_fontSize}/>
-        <View
-          style={{
-            marginTop: 10,
-            alignContent: 'center',
-          }}>
-          <Image source={data.images[0]} style={styles.imgDeatil} />
-          <Image source={data.images[1]} style={styles.imgDeatil} />
-          <Image source={data.images[2]} style={styles.imgDeatil} />
-          <Image source={data.images[3]} style={styles.imgDeatil} />
-        </View>
+          <CustomAutoWebView fontSize={_fontSize} />
+          <View
+            style={{
+              marginTop: 10,
+              alignContent: 'center',
+            }}>
+            <Image source={data.images[0]} style={styles.imgDeatil} />
+            <Image source={data.images[1]} style={styles.imgDeatil} />
+            <Image source={data.images[2]} style={styles.imgDeatil} />
+            <Image source={data.images[3]} style={styles.imgDeatil} />
+          </View>
         </View>
       </ScrollView>
-      </SafeAreaView>
+    </SafeAreaView>
   );
 };
 

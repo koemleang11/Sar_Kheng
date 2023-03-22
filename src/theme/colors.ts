@@ -5,7 +5,7 @@ const defaultColor = {
   BG_Color: '#0089',
   DarkBrown: '#914D00',
   BrownPrimary: '#E87E04',
-  Gray: '#dddddd',
+  Gray: '#eeeeee',
   Red: '#FF0000'
 };
 

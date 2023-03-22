@@ -141,7 +141,7 @@ const DailyAction = () => {
             style={{
               width: 32,
               height: 32,
-              elevation: 30,
+              elevation: 8,
               backgroundColor: colors.BrownPrimary,
               justifyContent: 'center',
               alignItems: 'center',

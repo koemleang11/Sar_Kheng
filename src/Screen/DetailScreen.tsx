@@ -221,7 +221,7 @@ const DetailScreen = (props: any) => {
               name="calendar"
               style={{paddingTop: 4, paddingRight: 5, color: colors.Smoke}}
             />
-            <Text>{data.date}</Text>
+            <Text style={{color: colors.Smoke}}>{data.date}</Text>
           </View>
         </View>
         <View>

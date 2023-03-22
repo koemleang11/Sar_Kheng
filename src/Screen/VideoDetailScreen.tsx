@@ -11,43 +11,47 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import colors from '../theme/colors';
 import MaterailIcon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import CustomAutoWebView from '../component/CustomeAutoHight/CustomAutoWebView';
 import {goBack} from '../navigation/MainStack';
-import { size } from '../theme/fonts';
-import Share from 'react-native-share'
+import {size} from '../theme/fonts';
+import Share from 'react-native-share';
 const {width} = Dimensions.get('screen');
 
 interface Props {
-  children?: React.ReactNode
-  onShare?: () => void
-  onIncrease?: () => void
-  onDecrease?: () => void
+  children?: React.ReactNode;
+  onShare?: () => void;
+  onIncrease?: () => void;
+  onDecrease?: () => void;
 }
 
 const VideoDetailScreen = (props: any) => {
   const [_fontSize, setFontSize] = useState(size.font22);
- 
-  const onFonsize =(status:boolean)=>{
-    if(status){
-      setFontSize(_fontSize +1)
-    }else{
-      setFontSize(_fontSize -1)
+
+  const onFonsize = (status: boolean) => {
+    if (status) {
+      setFontSize(_fontSize + 1);
+    } else {
+      setFontSize(_fontSize - 1);
     }
-  }
+  };
   const CustomShare = () => {
     const shareOptions = {
-    title: 'Share via',
-    url: 'some share url',
-  };
+      title: 'Share via',
+      url: 'some share url',
+    };
 
-  Share.open(shareOptions)
-    .then((res) => { console.log(res) })
-    .catch((err) => { err && console.log(err); });
+    Share.open(shareOptions)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        err && console.log(err);
+      });
   };
 
   const data = props.route.params;
@@ -55,8 +59,7 @@ const VideoDetailScreen = (props: any) => {
     <SafeAreaView style={{flex: 1}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
 
-      {/* Header start */}
-
+      {/* Header Start */}
       <View
         style={{
           flexDirection: 'row',
@@ -65,130 +68,151 @@ const VideoDetailScreen = (props: any) => {
           height: 48,
           alignItems: 'center',
           paddingHorizontal: 10,
-          elevation: 12,
+          elevation: 8,
         }}>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => goBack()}>
-          <View
-            style={{
-              width: 32,
-              height: 32,
-              elevation: 30,
-              backgroundColor: colors.BrownPrimary,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-              paddingLeft: 5,
-            }}>
-            <MaterailIcon
-              name="arrow-back-ios"
-              size={20}
-              color={colors.white}
-            />
+        <View
+          style={{
+            flexDirection: 'row',
+            marginRight: 20,
+          }}>
+          <TouchableOpacity activeOpacity={0.8} onPress={() => goBack()}>
+            <View
+              style={{
+                width: 32,
+                height: 32,
+                elevation: 8,
+                backgroundColor: colors.BrownPrimary,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+                paddingLeft: 5,
+              }}>
+              <MaterailIcon
+                name="arrow-back-ios"
+                size={20}
+                color={colors.white}
+              />
+            </View>
+          </TouchableOpacity>
+          <View>
+            <Text
+              style={{
+                fontSize: 20,
+                color: colors.white,
+                fontFamily: 'Moul-Regular',
+                justifyContent: 'flex-start',
+                paddingLeft: 15,
+              }}>
+              ព័ត៌មានលម្អិត
+            </Text>
           </View>
-        </TouchableOpacity>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity
+            onPress={() => onFonsize(false)}
+            activeOpacity={0.8}>
+            <View
+              style={{
+                backgroundColor: colors.BrownPrimary,
+                elevation: 5,
+                height: 32,
+                width: 32,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+                marginRight: 10,
+              }}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: colors.white,
+                  fontFamily: 'Moul-Regular',
+                }}>
+                អ
+              </Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => onFonsize(true)} activeOpacity={0.8}>
+            <View
+              style={{
+                backgroundColor: colors.BrownPrimary,
+                elevation: 5,
+                height: 32,
+                width: 32,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+                marginRight: 10,
+              }}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: colors.white,
+                  fontFamily: 'Moul-Regular',
+                }}>
+                អ
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.5} onPress={CustomShare}>
+            <View
+              style={{
+                backgroundColor: colors.BrownPrimary,
+                elevation: 5,
+                height: 32,
+                width: 32,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+              }}>
+              <MaterailIcon name="ios-share" size={20} color={colors.white} />
+            </View>
+          </TouchableOpacity>
+        </View>
+      </View>
+      {/* Header end */}
+      <ScrollView>
         <View>
+          <YoutubePlayer
+            webViewStyle={{opacity: 0.99}}
+            height={230}
+            videoId={data.link}
+          />
+        </View>
+        <View style={styles.imageDetails}>
           <Text
             style={{
-              fontSize: 18,
-              color: colors.white,
-              fontFamily: 'Moul-Regular',
-              textAlign: 'center',
+              // width: '100%',
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: colors.BrownPrimary,
+              textAlign: 'justify',
+              fontFamily: 'KhmerOS_battambang',
             }}>
-            ព័ត៌មានលម្អិត
+            {data.title}
           </Text>
         </View>
-        <View style={{flexDirection: 'row'}}>
-        <TouchableOpacity   onPress={()=>onFonsize(false)}
-            activeOpacity={0.8}>
-          <View
-            style={{
-              backgroundColor: colors.BrownPrimary,
-              elevation: 5,
-              height: 32,
-              width: 32,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-              marginRight: 10,
-            }}>
-            <Text
-              style={{fontSize: 16, color: colors.white, fontWeight: 'bold'}}>
-              អ
-            </Text>
-          </View>
-          </TouchableOpacity>
-          <TouchableOpacity   onPress={()=>onFonsize(true)}
-            activeOpacity={0.8}>
-          <View
-            style={{
-              backgroundColor: colors.BrownPrimary,
-              elevation: 5,
-              height: 32,
-              width: 32,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-              marginRight: 10,
-            }} >
-            <Text
-              style={{fontSize: 20, color: colors.white, fontWeight: 'bold'}}>
-              អ
-            </Text>
-          </View>
-          </TouchableOpacity>
-          <View
-            style={{
-              backgroundColor: colors.BrownPrimary,
-              elevation: 5,
-              height: 32,
-              width: 32,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-            }}>
-            <MaterailIcon name="ios-share" size={20} color={colors.white} onPress={CustomShare} />
-          </View>
-        </View>
-      </View>
-
-      {/* Header end */}
-      <View >
-      <YoutubePlayer
-        webViewStyle={{opacity: 0.99}}
-        height={230}
-        videoId={data.link}
-      />
-      </View>
-      <View style={styles.imageDetails}>
-        <Text
+        <View
           style={{
-            // width: '100%',
-            fontSize: 20,
-            fontWeight: 'bold',
-            color: colors.BrownPrimary,
-            textAlign: 'justify',
-            fontFamily: 'KhmerOS_battambang',
+            borderWidth: 0.5,
+            borderColor: colors.Black,
+            height: 36,
+            paddingHorizontal: 10,
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexDirection: 'row',
+            marginBottom: 10,
           }}>
-          {data.title}
-        </Text>
-      </View>
-      <View
-        style={{
-          borderWidth: 0.5,
-          borderColor: colors.Black,
-          height: 36,
-          paddingHorizontal: 10,
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexDirection: 'row',
-          marginBottom: 10,
-        }}>
-        <View style={{flexDirection: 'row'}}>
-          <Icon name="calendar" style={{paddingTop: 4, paddingRight: 5}} />
-          <Text style={{color:colors.Smoke}}>{data.date}</Text>
+          <View style={{flexDirection: 'row'}}>
+            <Icon
+              name="calendar"
+              style={{paddingTop: 4, paddingRight: 5, color: colors.Smoke}}
+            />
+            <Text style={{color: colors.Smoke}}>{data.date}</Text>
+          </View>
         </View>
-      </View>
-      <ScrollView>
+
         <CustomAutoWebView fontSize={_fontSize} />
         <View
           style={{

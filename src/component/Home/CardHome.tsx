@@ -52,8 +52,8 @@ const CardHome = ({data}: any) => {
             justifyContent: 'space-between',
             marginHorizontal: 10,
             backgroundColor: colors.Gray,
-            borderBottomLeftRadius: 10,
-            borderBottomRightRadius: 10,
+            borderBottomLeftRadius: 8,
+            borderBottomRightRadius: 8,
             flexDirection: 'row',
             paddingTop: 10,
             elevation: 1,
@@ -67,7 +67,7 @@ const CardHome = ({data}: any) => {
               justifyContent: 'center',
               alignItems: 'center',
               flexDirection: 'row',
-              borderRadius: 10,
+              borderRadius: 8,
             }}>
             <Icon name="calendar" style={{color: colors.white}} />
             <Text style={{paddingLeft: 10, color: colors.white}}>
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     justifyContent: 'flex-end',
     overflow: 'hidden',
-    borderTopRightRadius: 15,
-    borderTopLeftRadius: 15,
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
   },
 });

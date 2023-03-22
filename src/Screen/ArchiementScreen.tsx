@@ -21,7 +21,7 @@ import {navigate, reset} from '../navigation/MainStack';
 
 const {width} = Dimensions.get('screen');
 
-const ArchiementScreen = ({navigation}: any) => {
+const ArchiementScreen = () => {
   const Card = ({data}: any) => {
     return (
       <View style={{height: 231, justifyContent: 'flex-end', marginBottom: 20}}>
@@ -142,7 +142,7 @@ const ArchiementScreen = ({navigation}: any) => {
             style={{
               width: 32,
               height: 32,
-              elevation: 30,
+              elevation: 8,
               backgroundColor: colors.BrownPrimary,
               justifyContent: 'center',
               alignItems: 'center',

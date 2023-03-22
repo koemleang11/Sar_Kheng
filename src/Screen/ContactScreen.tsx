@@ -21,13 +21,13 @@ const ContactScreen = ({navigation}: any) => {
       <View
         style={{
           flexDirection: 'row',
-          height: 50,
-          marginHorizontal: 20,
+          height: 60,
+          marginHorizontal: 30,
           borderBottomWidth: 1,
           borderColor: colors.BrownPrimary,
           alignItems: 'center',
         }}>
-        <Image source={data.images} style={{height: 20, width: 20}} />
+        <Image source={data.images} style={{height: 30, width: 30}} />
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => Linking.openURL(data.link)}>
@@ -66,7 +66,7 @@ const ContactScreen = ({navigation}: any) => {
             style={{
               width: 32,
               height: 32,
-              elevation: 30,
+              elevation: 8,
               backgroundColor: colors.BrownPrimary,
               justifyContent: 'center',
               alignItems: 'center',
@@ -94,14 +94,25 @@ const ContactScreen = ({navigation}: any) => {
           </Text>
         </View>
       </View>
-      <Image
-        source={require('../assets/SplashImage/BG.png')}
-        style={{width: '100%', height: 395}}
-      />
-      <FlatList
-        data={ContactList}
-        renderItem={({item}) => <Card data={item} />}
-      />
+      <View style={{width: '100%', height: 395}}>
+        <ImageBackground
+          source={require('../assets/SplashImage/BgImage2.png')}
+          style={{width: '100%', height: 395}}
+        />
+      </View>
+      <View
+        style={{
+          flex: 1,
+          marginTop: -50,
+          backgroundColor: colors.white,
+          borderTopLeftRadius: 12,
+          borderTopRightRadius: 12,
+        }}>
+        <FlatList
+          data={ContactList}
+          renderItem={({item}) => <Card data={item} />}
+        />
+      </View>
     </SafeAreaView>
   );
 };

@@ -3,7 +3,7 @@ const data = [
     id: 1,
     title:
       'សម្ដេចក្រឡាហោម ស ខេង អញ្ជើញចូលជួបសម្ដែងការគួរសមជា មួយ ឯកឧត្តម ផាម មិញជិញ',
-      date: 'ថ្ងៃទី ២៧ ខែកុម្ភៈ ២០២៣',
+    date: 'ថ្ងៃទី ២៧ ខែកុម្ភៈ ២០២៣',
     Img: require('../assets/SplashImage/Card1.png'),
     images: [
       require('../assets/SplashImage/img1.png'),
@@ -18,7 +18,7 @@ const data = [
     id: 2,
     title:
       'សម្ដេចក្រឡាហោម ស ខេង អញ្ជើញចូលជួបសម្ដែងការគួរសមជា មួយ ឯកឧត្តម ផាម មិញជិញ',
-      date: 'ថ្ងៃទី ២៧ ខែកុម្ភៈ ២០២៣',
+    date: 'ថ្ងៃទី ២៧ ខែកុម្ភៈ ២០២៣',
     Img: require('../assets/SplashImage/Card1.png'),
     images: [
       require('../assets/SplashImage/Card1.png'),
@@ -33,10 +33,10 @@ const data = [
     id: 3,
     title:
       'សម្ដេចក្រឡាហោម ស ខេង អញ្ជើញចូលជួបសម្ដែងការគួរសមជា មួយ ឯកឧត្តម ផាម មិញជិញ',
-      date: 'ថ្ងៃទី ២៧ ខែកុម្ភៈ ២០២៣',
+    date: 'ថ្ងៃទី ២៧ ខែកុម្ភៈ ២០២៣',
     Img: require('../assets/SplashImage/Card1.png'),
     images: [
-      require('../assets/SplashImage/Card1.png'),
+      require('../assets/SplashImage/img3.png'),
       require('../assets/SplashImage/Card1.png'),
       require('../assets/SplashImage/Card1.png'),
       require('../assets/SplashImage/Card1.png'),
@@ -48,10 +48,10 @@ const data = [
     id: 4,
     title:
       'សម្ដេចក្រឡាហោម ស ខេង អញ្ជើញចូលជួបសម្ដែងការគួរសមជា មួយ ឯកឧត្តម ផាម មិញជិញ',
-      date: 'ថ្ងៃទី ២៧ ខែកុម្ភៈ ២០២៣',
+    date: 'ថ្ងៃទី ២៧ ខែកុម្ភៈ ២០២៣',
     Img: require('../assets/SplashImage/Card1.png'),
     images: [
-      require('../assets/SplashImage/Card1.png'),
+      require('../assets/SplashImage/img4.png'),
       require('../assets/SplashImage/Card1.png'),
       require('../assets/SplashImage/Card1.png'),
       require('../assets/SplashImage/Card1.png'),

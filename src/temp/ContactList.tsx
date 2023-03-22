@@ -13,7 +13,7 @@ const ContactList = [
   },
   {
     images: require('../assets/icons/Facebook2.png'),
-    Title: 'FaceBook Chan',
+    Title: 'FaceBook Channel',
     link: 'https://www.facebook.com/SamdechKrolahomSarkheng?mibextid=LQQJ4d',
   },
   {

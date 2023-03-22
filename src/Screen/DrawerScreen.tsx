@@ -24,8 +24,8 @@ const DrawerScreen = ({data}: any) => {
     <SafeAreaView style={{flex: 1}}>
       <View style={{height: 300}}>
         <Image
-          source={require('../assets/SplashImage/BgImage.png')}
-          style={{width: '100%', height: 300, resizeMode: 'cover'}}
+          source={require('../assets/SplashImage/BgImage2.png')}
+          style={{width: '100%', height: 310, resizeMode: 'cover'}}
         />
       </View>
       <View

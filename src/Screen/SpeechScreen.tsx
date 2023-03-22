@@ -15,7 +15,7 @@ import {navigate, reset} from '../navigation/MainStack';
 
 const SpeechScreen = ({navigation}: any) => {
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
 
       {/* Header Start */}
@@ -68,37 +68,35 @@ const SpeechScreen = ({navigation}: any) => {
       {/* Header End */}
 
       {/* Imgae  */}
-
-      <Image
-        source={require('../assets/SplashImage/BG.png')}
-        style={{width: '100%', height: 380, resizeMode: 'cover'}}
-      />
-
-      {/* <Image End> */}
-
-      {/* Speech Detail start */}
-      <View
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: 50,
-          backgroundColor: colors.BrownPrimary,
-          marginTop: -30,
-          marginBottom: 10,
-          borderTopRightRadius: 20,
-          borderTopLeftRadius: 20,
-        }}>
-        <Text
-          style={{
-            fontSize: 18,
-            fontFamily: 'Moul-Regular',
-            color: colors.white,
-          }}>
-          ពាក្យស្លោកជាតិ ៣កុំ ១រាយការណ៍
-        </Text>
-      </View>
-
       <ScrollView>
+        <Image
+          source={require('../assets/SplashImage/BG.png')}
+          style={{width: '100%', height: 380, resizeMode: 'cover'}}
+        />
+
+        {/* <Image End> */}
+
+        {/* Speech Detail start */}
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 50,
+            backgroundColor: colors.BrownPrimary,
+            marginTop: -30,
+            marginBottom: 10,
+            borderTopRightRadius: 10,
+            borderTopLeftRadius: 10,
+          }}>
+          <Text
+            style={{
+              fontSize: 18,
+              fontFamily: 'Moul-Regular',
+              color: colors.white,
+            }}>
+            ពាក្យស្លោកជាតិ ៣កុំ ១រាយការណ៍
+          </Text>
+        </View>
         <View>
           <Text style={styles.TitleSection}>កុំពាក់ព័ន្ធ ៖</Text>
           <Text style={styles.detail}>
@@ -140,7 +138,7 @@ export default SpeechScreen;
 
 const styles = StyleSheet.create({
   TitleSection: {
-    fontSize: 16,
+    fontSize: 18,
     color: colors.BrownPrimary,
     paddingHorizontal: 20,
     fontFamily: 'Battambang-Bold',
@@ -148,7 +146,7 @@ const styles = StyleSheet.create({
   detail: {
     paddingHorizontal: 20,
     paddingBottom: 10,
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: 'Battambang-Regular',
     color: colors.Black,
   },

@@ -33,7 +33,7 @@ const ContactScreen = ({navigation}: any) => {
           onPress={() => Linking.openURL(data.link)}>
           <Text
             style={{
-              fontSize: 14,
+              fontSize: 16,
               color: colors.Black,
               paddingLeft: 10,
               paddingRight: 20,

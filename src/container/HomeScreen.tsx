@@ -19,6 +19,7 @@ import YoutubePlayer from 'react-native-youtube-iframe';
 import CardHome from '../component/Home/CardHome';
 import TextTick from '../component/Home/TextTicker';
 import Header from '../component/Home/Header';
+import {navigate} from '../navigation/MainStack';
 
 const {width} = Dimensions.get('screen');
 
@@ -33,7 +34,11 @@ const HomeScreen = () => {
           height={220}
           videoId={'LtvXKx8aYO0'}
         />
-        <TextTick />
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigate('SpeechScreen')}>
+          <TextTick />
+        </TouchableOpacity>
       </View>
       <FlatList data={data} renderItem={({item}) => <CardHome data={item} />} />
     </SafeAreaView>

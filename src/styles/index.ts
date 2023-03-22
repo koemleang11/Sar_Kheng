@@ -14,5 +14,11 @@ export const makerStyle = StyleSheet.create({
     alignContent: 'center',
   },
 });
+export const HeaderCustom = StyleSheet.create({
+  AliginCenter: {
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+});
 
 export default defaultStyle;

@@ -12,70 +12,18 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import colors from '../theme/colors';
 import {navigate, reset} from '../navigation/MainStack';
+import CustomHeader from '../component/Header/CustomHeader';
 
 const SpeechScreen = ({navigation}: any) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <StatusBar translucent={false} backgroundColor={colors.BrownPrimary} />
-
-      {/* Header Start */}
-
-      <View
-        style={{
-          flexDirection: 'row',
-          backgroundColor: colors.BrownPrimary,
-          height: 48,
-          alignItems: 'center',
-          paddingHorizontal: 20,
-          elevation: 20,
-        }}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigate('HomeScreen')}>
-          <View
-            style={{
-              width: 32,
-              height: 32,
-              elevation: 8,
-              backgroundColor: colors.BrownPrimary,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-              paddingLeft: 5,
-            }}>
-            <Icon name="arrow-back-ios" size={20} color={colors.white} />
-          </View>
-        </TouchableOpacity>
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: 10,
-            paddingLeft: 5,
-          }}>
-          <Text
-            style={{
-              paddingLeft: 20,
-              fontSize: 18,
-              color: colors.white,
-              fontFamily: 'Moul-Regular',
-            }}>
-            សម្តេចក្រឡាហោម ស ខេង
-          </Text>
-        </View>
-      </View>
-
-      {/* Header End */}
-
-      {/* Imgae  */}
+      <CustomHeader />
       <ScrollView>
         <Image
           source={require('../assets/SplashImage/BgImage2.png')}
-          style={{width: '100%', height: 380, resizeMode: 'cover'}}
+          style={{width: '100%', height: 400}}
         />
-
-        {/* <Image End> */}
-
         {/* Speech Detail start */}
         <View
           style={{
@@ -128,7 +76,6 @@ const SpeechScreen = ({navigation}: any) => {
           </Text>
         </View>
       </ScrollView>
-
       {/* Speech Detail start */}
     </SafeAreaView>
   );

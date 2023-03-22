@@ -14,6 +14,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import ContactList from '../temp/ContactList';
 import {Linking} from 'react-native';
 import {navigate, reset} from '../navigation/MainStack';
+import CustomHeader from '../component/Header/CustomHeader';
 
 const ContactScreen = ({navigation}: any) => {
   const Card = ({data}: any) => {
@@ -49,51 +50,7 @@ const ContactScreen = ({navigation}: any) => {
 
   return (
     <SafeAreaView style={{flex: 1, marginBottom: 10}}>
-      <View
-        style={{
-          flexDirection: 'row',
-          //   justifyContent: 'space-between',
-          backgroundColor: colors.BrownPrimary,
-          height: 48,
-          alignItems: 'center',
-          paddingHorizontal: 20,
-          elevation: 12,
-        }}>
-        <TouchableOpacity
-          activeOpacity={0.9}
-          onPress={() => navigate('HomeScreen')}>
-          <View
-            style={{
-              width: 32,
-              height: 32,
-              elevation: 8,
-              backgroundColor: colors.BrownPrimary,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-              paddingLeft: 5,
-            }}>
-            <Icon name="arrow-back-ios" size={20} color={colors.white} />
-          </View>
-        </TouchableOpacity>
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: 10,
-            paddingLeft: 5,
-          }}>
-          <Text
-            style={{
-              fontSize: 18,
-              color: colors.white,
-              fontFamily: 'Moul-Regular',
-              paddingLeft: 20,
-            }}>
-            សម្តេចក្រឡាហោម ស ខេង
-          </Text>
-        </View>
-      </View>
+      <CustomHeader />
       <View style={{width: '100%', height: 395}}>
         <ImageBackground
           source={require('../assets/SplashImage/BgImage2.png')}
